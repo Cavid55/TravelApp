@@ -16,7 +16,7 @@ namespace TravelApp.Startup
 
             builder.RegisterType<MainWindow>().AsSelf();
             builder.RegisterType<MainWindowModel>().AsSelf();
-            //builder.RegisterType<MyStatViewModel>().AsSelf();
+            builder.RegisterType<PlanViewModel>().AsSelf();
             //builder.RegisterType<SignInViewModel>().AsSelf();
             ////builder.RegisterType<FriendDetailViewModel>().As<IFriendDetailViewModel>();
 
