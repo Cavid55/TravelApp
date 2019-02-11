@@ -13,6 +13,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="30"/>
             <RowDefinition />
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="PLAN YOUR DAYS"/>
         <TextBlock Grid.Row="1"/>
@@ -26,16 +27,20 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
                             <CheckBox  Grid.Column="0" />
-                            <TextBlock Grid.Column="1" Text="{Binding place}" />
-                            <TextBlock Grid.Column="2" Text="{Binding time}"/>
-                            <TextBlock Grid.Column="3"  Text="{Binding price}"/>
+                            <TextBox IsEnabled="{Binding RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}, Path=DataContext.Editable , Mode=TwoWay}" Background="White" FontWeight="Bold"  Foreground="Red" Grid.Column="1" Text="{Binding place}" />
+                            <TextBox IsEnabled="False" Grid.Column="2" Text="{Binding time}"/>
+                            <TextBox Grid.Column="3"  Text="{Binding price}"/>
+                            <Button Grid.Column="4" Content="Edit" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}, Path=DataContext.EditCommand}" />
+
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
+        <Button Grid.Row="3" Content="Add" Command="{Binding AddCommand}" />
     </Grid>
 </UserControl>

@@ -8,15 +8,15 @@ namespace TravelApp.ViewModels
 {
     public class MainWindowModel
     {
-        public PlanViewModel _planviewmodel { get; }
+        public PlanViewModel PlanViewModel { get; }
         public MainWindowModel(PlanViewModel planViewModel)
         {
-            _planviewmodel = planViewModel;
+            PlanViewModel = planViewModel;
         }
 
         public void Load()
         {
-            _planviewmodel.Load();
+            PlanViewModel.Load();
         }
     }
 }
